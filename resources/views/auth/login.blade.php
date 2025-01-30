@@ -75,6 +75,9 @@
 
 </head>
 <body>
+    <!-- Session Status -->
+    <x-auth-session-status class="mb-4" :status="session('status')" />
+
     <div class="main-div vh-100 vw-100 d-flex align-items-center justify-content-center " style="background-color:#F5F7FF;">
         <div class="d-flex shadow-lg flex-wrap w-auto h-auto">
             <div class=" d-flex align-items-center justify-content-center flex-column p-5" style="height:500px; width:500px; background-color:#ffff;">
@@ -92,7 +95,7 @@
                     </div>
                     <div class="col w-100 mb-2">
                         <label for="email" :value="__('Email')" class="mb-2" for="email">Email</label>
-                        <input id="email" type="text" class="form-control"  aria-label="Username" required aria-describedby="basic-addon1">
+                        <input id="email" class="form-control"  aria-label="Username" required aria-describedby="basic-addon1" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" >
                         <x-input-error :messages="$errors->get('email')" class="mt-2" />
                     </div>
                     <div class="col  w-100 mb-3">

@@ -45,7 +45,7 @@ class UserMiddleware
     public function handle(Request $request, Closure $next)
     {
         // Check if the user is authenticated and has the role of 'user'
-        if (Auth::check() && Auth::ser()->role === 'user') {
+        if (Auth::check() && Auth::user()->role === 'user') {
             return $next($request);
         }
 

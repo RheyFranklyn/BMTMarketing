@@ -60,13 +60,14 @@ Route::middleware('auth')->group(function () {
         ->name('logout');
 });
 
+//middleware sa admin and user ge isa nalaman og group
 Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/admin-dashboard', function () {
 
         return view('admin.admin-dashboard'); // Blade view for admin dashboard
 
-    })->name('admin.dashboard')->middleware('admin'); // Apply admin middleware
+    })->name('admin.dashboard'); // Apply admin middleware
 
 
     Route::get('/user-dashboard', function () {
@@ -74,4 +75,40 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('user.user-dashboard'); // Blade view for user dashboard
 
     })->name('user.dashboard');
+
+    Route::get('/admin-bulletin', function () {
+        return view('pages.bulletin');
+    })->name('bulletin');
+
+    Route::get('/postTemplate', function () {
+        return view('pages.postTemplate');
+    })->name('postTemplate');
+
+    Route::get('/replyTemplate', function () {
+        return view('pages.replyTemplate');
+    })->name('replyTemplate');
+
+    Route::get('/priceList', function () {
+        return view('pages.priceList');
+    })->name('priceList');
+
+    Route::get('/replyTemplate', function () {
+        return view('pages.replyTemplate');
+    })->name('replyTemplate');
+
+    Route::get('/quotation', function () {
+        return view('pages.quotation');
+    })->name('quotation');
+
+    Route::get('/prospects', function () {
+        return view('pages.prospects');
+    })->name('prospects');
+
+    Route::get('/insight', function () {
+        return view('pages.insight');
+    })->name('insight');
+
+    Route::get('/guides', function () {
+        return view('pages.guides');
+    })->name('guides');
 });
