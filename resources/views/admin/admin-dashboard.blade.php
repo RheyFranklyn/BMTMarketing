@@ -27,7 +27,7 @@
 </head>
 <body>
 
-    <div class="home-div vh-100 vw-100">
+    <div class="home-div h-100 w-100">
         {{-- SideBar Design --}}
         <div class="sidebar">
             <div class="text">
@@ -102,8 +102,73 @@
         </div>
 
         {{-- Header --}}
-        <div class="header outline-none p-2" style="background-color:#F3F5FD;">
-            <div class="h-100 w-100 d-flex justify-content-end rounded shadow p-2" style="background-color:#ffff;">
+        <div class="header outline-none p-2 w-100" style="background-color:#F3F5FD;">
+            <div class="h-100 w-100 d-flex align-items-center justify-content-between rounded shadow p-2" style="background-color:#ffff;">
+                <div class="d-flex align-items-center justify-content-between gap-3">
+                    {{-- Search --}}
+                    <div class="input-group border rounded" style="height: 2rem; width: 230px;">
+                        <span class="input-group-text bg-transparent border-0" id="basic-addon1">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+                        <input type="text" class="form-control border-0 bg-transparent" placeholder="Search..." aria-label="Search..." aria-describedby="basic-addon1" style="font-size: 0.8rem;">
+                    </div>
+                    
+                        {{-- Buttons --}}
+                    <div class="d-flex align-items-center justify-content-between" style="width:330px;">
+
+                        {{-- Add --}}
+                        <div class="addButton">
+                            <button type="button" class="btn btn-success saveButton" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                             style="font-size:0.6rem; width:100px; border-radius:3px;">
+                                <i class="fa-solid fa-plus" style="margin-right: 5px;"></i> Add
+                            </button>                            
+                        </div>
+                        
+                        {{-- Edit --}}
+                        <div class="editButton">
+                            <button type="button" class="btn btn-primary" style="font-size:0.6rem; width:100px; border-radius:3px">
+                                <i class="fa-regular fa-pen-to-square" style="margin-right: 5px;"></i>Edit
+                            </button>
+                        </div>
+
+                        {{-- Delete --}}
+                        <div class="deleteButton">
+                            <button type="button" class="btn btn-danger" style="font-size:0.6rem; width:100px; border-radius:3px">
+                                <i class="fa-solid fa-trash" style="margin-right: 5px;"></i>Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                {{-- Modal Add --}}
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <small class="text-muted">Add Item</small>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="font-size:0.6rem;"></button>
+                            </div> 
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="itemName" class="form-label" style="font-size:0.7rem;">Item Name</label>
+                                        <input type="text" class="form-control" id="itemName" placeholder="Enter item name" style="height:30px;">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="itemDescription" class="form-label" style="font-size:0.7rem;">Description</label>
+                                        <textarea class="form-control" id="itemDescription" rows="3" placeholder="Enter description"></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 
+                {{-- Dropdown --}}
                 <div class="dropdown h-100 d-flex align-items-center justify-content-center" style="width: 50px">
                     <button type="button" class="d-flex align-items-center justify-content-center" data-bs-toggle="dropdown" aria-expanded="false" style="all:unset; cursor:pointer;">
                         <i class="fa-regular fa-user"></i>
@@ -124,12 +189,12 @@
                             </form>
                         </li>
                       </ul>
-                </div>
+                </div> 
             </div>
         </div>
 
         {{-- Main Content --}}
-        <div class="content p-2">
+        <div class="content p-2 h-100">
             <div class="main-content h-100 w-100 border rounded shadow p-2" style="background-color:#ffff">
                 @yield('content')
             </div>

@@ -3,8 +3,8 @@
 @section('title', 'BMTMarketing - Bulletin & To Do')
 @section('content')
 
-    <div class="h-100 w-100 d-flex align-items-center justify-content-between">
-            <div style="height:500px; width:300px;">
+    <div class="h-100 w-100 d-flex justify-content-between">
+            <div  style="height:500px; width:300px;">
                 {{-- Bulletin List --}}
                <div class="card w-100 h-50 mb-1">
                   <small class="card-header text-muted" style="font-size:0.7rem;">Bulletin</small>
@@ -36,53 +36,20 @@
 
 
           {{-- List Content --}}
-          <div class="h-100 w-100 border rounded" style="margin-left:1rem; height: 100%;">
+          <div class="h-100 w-100 border rounded" style="margin-left:1rem;;">
             <div class="header w-100 rounded p-1 d-flex align-items-center gap-2" 
             style="height:2rem; background-color:grey;">
                 <small style="font-size: 0.8rem; color:white; margin-left:10px;">Context</small>
                 <div style="border-left: 1px solid white; height: 1.2rem; margin-right: 8px;"></div>
-                <span style="font-size:0.9rem; color:white; font-weight:bold;">Jhoedhen</span>
+                <span style="font-size:0.9rem; color:white; font-weight:bold;">Bulletin</span>
             </div>
 
             {{-- Content --}}
-            <div class="w-100overflow-auto rounded" 
+            <div class="w-100 overflow-auto rounded" 
             style="height:78.8vh; max-height:78.8vh; font-size:0.8rem; padding: 5px 10px; text-align:justify;">
-                <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati ea in quis 
-                    et tempora quibusdam odio provident repudiandae dolor, qui cumque. 
-                    Officiis accusamus assumenda nisi itaque odit fuga quibusdam voluptatibus?
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati ea in quis 
-                    et tempora quibusdam odio provident repudiandae dolor, qui cumque. 
-                    Officiis accusamus assumenda nisi itaque odit fuga quibusdam voluptatibus?
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati ea in quis 
-                    et tempora quibusdam odio provident repudiandae dolor, qui cumque. 
-                    Officiis accusamus assumenda nisi itaque odit fuga quibusdam voluptatibus?
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati ea in quis 
-                    et tempora quibusdam odio provident repudiandae dolor, qui cumque. 
-                    Officiis accusamus assumenda nisi itaque odit fuga quibusdam voluptatibus?
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati ea in quis 
-                    et tempora quibusdam odio provident repudiandae dolor, qui cumque. 
-                    Officiis accusamus assumenda nisi itaque odit fuga quibusdam voluptatibus?
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati ea in quis 
-                    et tempora quibusdam odio provident repudiandae dolor, qui cumque. 
-                    Officiis accusamus assumenda nisi itaque odit fuga quibusdam voluptatibus?
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati ea in quis 
-                    et tempora quibusdam odio provident repudiandae dolor, qui cumque. 
-                    Officiis accusamus assumenda nisi itaque odit fuga quibusdam voluptatibus?
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati ea in quis 
-                    et tempora quibusdam odio provident repudiandae dolor, qui cumque. 
-                    Officiis accusamus assumenda nisi itaque odit fuga quibusdam voluptatibus?
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati ea in quis 
-                    et tempora quibusdam odio provident repudiandae dolor, qui cumque. 
-                    Officiis accusamus assumenda nisi itaque odit fuga quibusdam voluptatibus?
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati ea in quis 
-                    et tempora quibusdam odio provident repudiandae dolor, qui cumque. 
-                    Officiis accusamus assumenda nisi itaque odit fuga quibusdam voluptatibus?
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati ea in quis 
-                    et tempora quibusdam odio provident repudiandae dolor, qui cumque. 
-                    Officiis accusamus assumenda nisi itaque odit fuga quibusdam voluptatibus?
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati ea in quis 
-                    et tempora quibusdam odio provident repudiandae dolor, qui cumque. 
-                    Officiis accusamus assumenda nisi itaque odit fuga quibusdam voluptatibus?</span>
             </div>
+
+         </div>
+    </div>
              
 @endsection
