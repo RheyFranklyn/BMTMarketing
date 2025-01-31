@@ -21,7 +21,7 @@
 
       {{-- Other List --}}
      <div class="card w-100 h-50 ">
-          <small class="card-header text-muted" style="font-size:0.7rem;">Others</small>
+          <small class="card-header text-muted" style="font-size:0.7rem;">Templates</small>
           <div class="card-body p-0 pt-2 overflow-auto custom-scrollbar">
               <ol style="font-size:0.8rem; cursor:pointer;">
                 <li class="bulletinList"><a href="">Computer Set - 6</a></li>

@@ -7,7 +7,6 @@
 body {
     height: 100vh;
 }
-
 /* for responsive layout */
 .home-div {
     display: grid;
