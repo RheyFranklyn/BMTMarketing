@@ -2,7 +2,7 @@
 
 @section('title', 'BMTMarketing - Bulletin & To Do')
 @section('content')
-
+    
     <div class="h-100 w-100 d-flex align-items-center justify-content-between">
             <div style="height:500px; width:300px;">
                 {{-- Bulletin List --}}
@@ -84,5 +84,6 @@
                     et tempora quibusdam odio provident repudiandae dolor, qui cumque. 
                     Officiis accusamus assumenda nisi itaque odit fuga quibusdam voluptatibus?</span>
             </div>
-             
+            
+            
 @endsection
