@@ -33,22 +33,6 @@
     font-size: 9px;
 }
 
-span:hover {
-    color: blue;
-    cursor: pointer;
-    transition: all 0.3ms;
-}
-
-.bulletin:hover .icon,
-.Post-template:hover .icon,
-.Reply-template:hover .icon,
-.Price-list:hover .icon,
-.Quotation:hover .icon {
-    transform: rotateY(360deg);
-    transition: transform 0.6s ease-in-out;
-    color: blue;
-}
-
 .header {
     grid-area: header;
     background-color: #f8f9fa;
@@ -64,9 +48,16 @@ span:hover {
     text-decoration: none;
     color: inherit;
 }
+.side-bar {
+    transition: all 0.3s ease-in-out;
+}
 
-/* Drop Down Menu Logout */
-.profileBtn:active {
-    outline: none;
-    border: none;
+.side-bar:hover {
+    transform: scale(1.1);
+}
+
+.active .side-bar {
+    background-color: blue !important;
+    color: white !important;
+    font-weight: bold;
 }
