@@ -130,28 +130,28 @@
                                 @if (request()->routeIs('bulletin'))
                                 {{-- Add Button for Bulletin Page --}}
                                 <button type="button" class="btn btn-success saveButton" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal"
+                                    data-bs-target="#bulletinModal"
                                     style="font-size:0.6rem; width:100px; border-radius:3px;">
                                     <i class="fa-solid fa-plus" style="margin-right: 5px;"></i> Add
                                 </button>
                                 @elseif (request()->routeIs('postTemplate'))
                                 {{-- Add Button for To-Do Page --}}
                                 <button type="button" class="btn btn-success saveButton" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal"
+                                    data-bs-target="#PostTemplateModal"
                                     style="font-size:0.6rem; width:100px; border-radius:3px;">
                                     <i class="fa-solid fa-plus" style="margin-right: 5px;"></i> Add
                                 </button>
                                 @elseif (request()->routeIs('replyTemplate'))
                                 {{-- Add Button for Item Category Page --}}
                                 <button type="button" class="btn btn-success saveButton" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal"
+                                    data-bs-target="#ReplyTemplateModal"
                                     style="font-size:0.6rem; width:100px; border-radius:3px;">
                                     <i class="fa-solid fa-plus" style="margin-right: 5px;"></i> Add
                                 </button>
                                 @elseif (request()->routeIs('priceList'))
                                 {{-- Add Button for Contact Page --}}
                                 <button type="button" class="btn btn-success saveButton" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal"
+                                    data-bs-target="#PriceListModal"
                                     style="font-size:0.6rem; width:100px; border-radius:3px;">
                                     <i class="fa-solid fa-plus" style="margin-right: 5px;"></i> Add
                                 </button>
@@ -183,40 +183,19 @@
                         </div>
                     </div>
 
-                    {{-- Modal Add --}}
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <small class="text-muted">Add Item</small>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                                        style="font-size:0.6rem;"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <form>
-                                        <div class="mb-3">
-                                            <label for="itemName" class="form-label" style="font-size:0.7rem;">Item
-                                                Name</label>
-                                            <input type="text" class="form-control" id="itemName"
-                                                placeholder="Enter item name" style="height:30px;">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="itemDescription" class="form-label"
-                                                style="font-size:0.7rem;">Description</label>
-                                            <textarea class="form-control" id="itemDescription" rows="3"
-                                                placeholder="Enter description"></textarea>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                    {{-- Modals --}}
+                    {{-- Bulletin Modal --}}
+                    @include('modal.bulletin_modal')
+
+                    {{-- Post Template Modal --}}
+                    @include('modal.template_modal')
+
+                    {{-- Reply Template Modal --}}
+                    @include('modal.reply_modal')
+
+                    {{-- Price List Modal --}}
+                    @include('modal.price_modal')
 
                     {{-- Dropdown --}}
                     <div class="dropdown h-100 d-flex align-items-center justify-content-center" style="width: 50px">
