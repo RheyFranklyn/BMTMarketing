@@ -17,6 +17,8 @@ body {
         "sidebar header"
         "sidebar content";
     background-color: #f5f7ff;
+    height: 100vh;
+    /* change */
 }
 
 .sidebar {
@@ -43,7 +45,6 @@ body {
 
 .content {
     grid-area: content;
-    z-index: 1;
     padding: 15px;
 }
 
