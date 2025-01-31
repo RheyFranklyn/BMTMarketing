@@ -63,18 +63,18 @@ Route::middleware('auth')->group(function () {
 //middleware sa admin and user ge isa nalaman og group
 Route::middleware(['auth', 'verified'])->group(function () {
 
-    Route::get('/admin-dashboard', function () {
+    Route::middleware(['role:admin'])->group(function () {
+        Route::get('/admin-dashboard', function () {
+            return view('admin.admin-dashboard');
+        })->name('admin.dashboard');
+    });
 
-        return view('admin.admin-dashboard'); // Blade view for admin dashboard
+    Route::middleware(['role:user'])->group(function () {
+        Route::get('/user-dashboard', function () {
+            return view('user.user-dashboard');
+        })->name('user.dashboard');
+    });
 
-    })->name('admin.dashboard'); // Apply admin middleware
-
-
-    Route::get('/user-dashboard', function () {
-
-        return view('user.user-dashboard'); // Blade view for user dashboard
-
-    })->name('user.dashboard');
 
     Route::get('/admin-bulletin', function () {
         return view('pages.bulletin');

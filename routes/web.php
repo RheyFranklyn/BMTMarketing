@@ -5,8 +5,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Auth;
 
+// Automatically logout if the user is logged in and tries to visit the login page
 Route::get('/', function () {
-    return view('auth.login');
+    if (Auth::check()) {
+        Auth::logout(); // Log the user out
+        session()->invalidate(); // Invalidate the session
+        session()->regenerateToken(); // Regenerate CSRF token to prevent attacks
+    }
+
+    return view('auth.login'); // Show the login page
 });
 
 Route::middleware('auth')->group(function () {
