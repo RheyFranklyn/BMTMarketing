@@ -195,7 +195,7 @@
 
         {{-- Main Content --}}
         <div class="content p-2">
-            <div class="main-content w-100 border rounded shadow p-2 " style="background-color: #ffff;height:87vh;">
+            <div class="main-content h-100 w-100 border rounded shadow p-2" style="background-color: #ffff;">
                 @yield('content')
             </div>
         </div>
