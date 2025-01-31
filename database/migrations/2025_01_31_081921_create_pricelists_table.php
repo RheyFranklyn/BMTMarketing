@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('pname');
             $table->string('kind')->default('Template');
-            $table->string('content');
+            $table->longText('content'); // Allows very long text
             $table->timestamps();
         });
     }

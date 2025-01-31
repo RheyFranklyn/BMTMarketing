@@ -17,7 +17,11 @@ class PricelistFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'pname' => $this->faker->words(3, true), // Generates a product name
+            'kind' => $this->faker->randomElement(['Template', 'Bulletin']), // Random kind
+            'content' => $this->faker->paragraphs(10, true), // Generates long text content
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
     }
 }

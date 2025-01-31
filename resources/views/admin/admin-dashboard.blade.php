@@ -27,7 +27,7 @@
 </head>
 <body>
 
-    <div class="home-div h-100 w-100">
+    <div class="home-div w-100">
         {{-- SideBar Design --}}
         <div class="sidebar">
             <div class="text">
@@ -167,7 +167,6 @@
                         </div>
                     </div>
                 </div>
-                
                  
                 {{-- Dropdown --}}
                 <div class="dropdown h-100 d-flex align-items-center justify-content-center" style="width: 50px">
@@ -195,18 +194,15 @@
         </div>
 
         {{-- Main Content --}}
-
         <div class="content p-2">
-            <div class="main-content h-100 w-100 border rounded shadow p-3" style="background-color:#ffff">
-
-        <div class="content p-2 h-100">
-            <div class="main-content h-100 w-100 border rounded shadow p-2" style="background-color:#ffff">
-
+            <div class="main-content w-100 border rounded shadow p-2 " style="background-color: #ffff;height:87vh;">
                 @yield('content')
             </div>
         </div>
-        
+
+
     </div>
+    
     
    
     {{-- Script JS --}}
