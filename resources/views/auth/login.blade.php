@@ -56,6 +56,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>BMTMarketing - login</title>
+    <link rel="icon" href="{{asset('pictures/Bizmatech-logo-removebg-preview.png')}}">
     {{-- Google Font --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -79,22 +80,25 @@
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
     <div class="main-div vh-100 vw-100 d-flex align-items-center justify-content-center " style="background-color:#F5F7FF;">
-        <div class="d-flex shadow-lg flex-wrap w-auto h-auto">
-            <div class=" d-flex align-items-center justify-content-center flex-column p-5" style="height:500px; width:500px; background-color:#ffff;">
-                <div class="picture-div mb-4 d-flex justify-content-center align-items-center" style="height:350px; width:350px;">
-                    <img src="{{asset('pictures/Bizmatech-logo-removebg-preview.png')}}" alt="Bizmatech Logo" class="img-fluid">
+        
+        <div class="d-flex shadow-lg flex-wrap w-100 h-auto overflow-hidden" style="max-width: 900px;">
+            {{-- image --}}
+            <div class="col-12 col-md-6 d-flex align-items-center justify-content-center flex-column p-4 bg-white">
+                <div class="picture-div mb-4 d-flex justify-content-center align-items-center" style="height:350px; width:350px;"class="picture-div mb-4 d-flex justify-content-center align-items-center" style="max-width: 100%; height: auto;">
+                    <img src="{{asset('pictures/Bizmatech-logo-removebg-preview.png')}}" alt="Bizmatech Logo" class="img-fluid" style="max-height: 350px;">
                 </div>
             </div>
+
             {{-- Login Form --}}
-            <div class="d-flex align-items-center justify-content-center flex-column p-5" style="height:500px; width:500px; background-color:#F5F5F5;">
+            <div class="col-12 col-md-6 d-flex align-items-center justify-content-center flex-column p-5" style="background-color:#F5F5F5;">
                 <form method="POST" action="{{ route('login') }}" class="d-flex align-items-center justify-content-center flex-column w-100">
                     @csrf
                     <div class="mb-4 w-100">
-                        <h1 class="fw-bold" style="color:blue;">Welcome!</h1>
-                        <p style="font-size:10px;">Explore top-quality Vendo Computers for all your needs.</p>
+                        <h1 class="fw-bold text-primary">Welcome!</h1>
+                        <p class="small">Explore top-quality Vendo Computers for all your needs.</p>
                     </div>
                     <div class="col w-100 mb-2">
-                        <label for="email" :value="__('Email')" class="mb-2" for="email">Email</label>
+                        <label for="email" :value="__('Email')" class="mb-2">Email</label>
                         <input id="email" class="form-control"  aria-label="Username" required aria-describedby="basic-addon1" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" >
                         <x-input-error :messages="$errors->get('email')" class="mt-2" />
                     </div>
@@ -111,7 +115,11 @@
                         </div>
                     </div>
                     
-                    <button type="submit" class="btn pl-5 pr-5 text-white w-50" style="background-color:blue;">{{ __('Log in') }}</button>
+                    <button id="loginButton" type="submit" class="btn btn-primary w-50">
+                        <span id="buttonText">{{ __('Log in') }}</span>
+                        <span id="buttonSpinner" class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                    </button>
+
                 </form>
             </div>
         </div>
