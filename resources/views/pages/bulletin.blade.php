@@ -2,15 +2,13 @@
 
 @section('title', 'BMTMarketing - Bulletin & To Do')
 @section('content')
-<<<<<<< HEAD
     
     <div class="h-100 w-100 d-flex align-items-center justify-content-between">
             <div style="height:500px; width:300px;">
-=======
 
     <div class="h-100 w-100 d-flex justify-content-between">
             <div  style="height:500px; width:300px;">
->>>>>>> cb8aa85edc55e2d55131d0782a6ba1c9afbba794
+
                 {{-- Bulletin List --}}
                <div class="card w-100 h-50 mb-1">
                   <small class="card-header text-muted" style="font-size:0.7rem;">Bulletin</small>
@@ -54,13 +52,8 @@
             <div class="w-100 overflow-auto rounded" 
             style="height:78.8vh; max-height:78.8vh; font-size:0.8rem; padding: 5px 10px; text-align:justify;">
             </div>
-<<<<<<< HEAD
-            
-            
-=======
 
          </div>
     </div>
-             
->>>>>>> cb8aa85edc55e2d55131d0782a6ba1c9afbba794
+
 @endsection

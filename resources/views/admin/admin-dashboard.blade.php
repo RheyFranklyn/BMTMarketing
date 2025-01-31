@@ -194,13 +194,13 @@
         </div>
 
         {{-- Main Content --}}
-<<<<<<< HEAD
+
         <div class="content p-2">
             <div class="main-content h-100 w-100 border rounded shadow p-3" style="background-color:#ffff">
-=======
+
         <div class="content p-2 h-100">
             <div class="main-content h-100 w-100 border rounded shadow p-2" style="background-color:#ffff">
->>>>>>> cb8aa85edc55e2d55131d0782a6ba1c9afbba794
+
                 @yield('content')
             </div>
         </div>
