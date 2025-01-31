@@ -77,3 +77,30 @@
 .side-bar:hover .icon {
     animation: bounce-once 0.4s ease-in-out;
 }
+
+/* Bulletin Blade CSS */
+.bulletinList a {
+    all: unset;
+}
+.bulletinList a:hover {
+    font-weight: bold;
+}
+
+/* Custom scrollbar styles for Bulletin Blade */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
