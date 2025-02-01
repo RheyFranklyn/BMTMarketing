@@ -3,6 +3,7 @@
 @section('title', 'BMTMarketing - Price List')
 
 @section('content')
+
 <div class="h-100 w-100 d-flex justify-content-between">
     <div  style="height:500px; width:300px;">
         {{-- Bulletin List --}}
@@ -10,26 +11,32 @@
           <small class="card-header text-muted" style="font-size:0.7rem;">Bulletin</small>
           <div class="card-body p-0 pt-2 overflow-auto custom-scrollbar">
               <ol style="font-size:0.8rem; cursor:pointer;">
-                <li class="bulletinList"><a href="">Computer Set - 1</a></li>
-                <li class="bulletinList"><a href="">Computer Set - 2</a></li>
-                <li class="bulletinList"><a href="">Computer Set - 3</a></li>
-                <li class="bulletinList"><a href="">Computer Set - 4</a></li>
-                <li class="bulletinList"><a href="">Computer Set - 5</a></li>
+                @if($pnamesBulletin->isEmpty())
+                    <p>Bulletin is Empty.</p>
+                @else
+                    @foreach ($pnamesBulletin as $id => $pname)
+                        <li class="bulletinList" data-id="{{ $id }}" data-type="bulletin">{{$pname}}</li>
+                    @endforeach
+                @endif
               </ol>
           </div>
       </div>
 
-      {{-- Other List --}}
+      {{-- Template --}}
      <div class="card w-100 h-50 mb-2">
-          <small class="card-header text-muted" style="font-size:0.7rem;">Others</small>
+          <small class="card-header text-muted" style="font-size:0.7rem;">Template</small>
           <div class="card-body p-0 pt-2 overflow-auto custom-scrollbar">
-              <ol style="font-size:0.8rem; cursor:pointer;">
-                <li class="bulletinList"><a href="">Computer Set - 6</a></li>
-                <li class="bulletinList"><a href="">Computer Set - 7</a></li>
-                <li class="bulletinList"><a href="">Computer Set - 8</a></li>
-                <li class="bulletinList"><a href="">Computer Set - 9</a></li>
-                <li class="bulletinList"><a href="">Computer Set - 10</a></li>
-              </ol>
+             
+                    <ol style="font-size:0.8rem; cursor:pointer;">
+                        @if($pnamesTemplate->isEmpty())
+                            <p>No products found.</p>
+                        @else
+                            @foreach ($pnamesTemplate as $id => $pname)
+                                <li class="bulletinList" data-id="{{ $id }}" data-type="Template">{{ $pname }}</li>
+                            @endforeach
+                        @endif
+                    </ol>
+               
           </div>
       </div> 
   </div>   
@@ -45,10 +52,18 @@
     </div>
 
     {{-- Content --}}
-    <div class="w-100 overflow-auto rounded" 
-    style="height:78.8vh; max-height:78.8vh; font-size:0.8rem; padding: 5px 10px; text-align:justify;">
+    <div id="contentDisplay" class="w-100 overflow-auto rounded" 
+        style="height:78.8vh; max-height:78.8vh; font-size:0.8rem; padding: 5px 10px; text-align:justify;">
+        <p>Please select an item to see the content.</p>
     </div>
+
 
  </div>
 </div>
+
+
 @endsection
+
+{{-- @push('scripts')
+    <script src="{{ asset('js/priceList-content')}}"></script> {{-- script to handle the click events for each list item. When the user clicks on a list item, an AJAX request will be sent to the controller to fetch the content and display it inside the #contentDisplay div. --}}
+{{--@endpush --}}

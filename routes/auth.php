@@ -11,6 +11,10 @@ use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\BulletinController;
+use App\Http\Controllers\PriceListController;
+use App\Http\Controllers\pricelisXample;
+use App\Models\Pricelist;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
@@ -67,6 +71,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/admin-dashboard', function () {
             return view('admin.admin-dashboard');
         })->name('admin.dashboard');
+
+        Route::resource('admin-priceList', PriceListController::class);
+        Route::resource('admin-bulletin', BulletinController::class);
     });
 
     Route::middleware(['role:user'])->group(function () {
@@ -76,9 +83,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     });
 
 
-    Route::get('/admin-bulletin', function () {
-        return view('pages.bulletin');
-    })->name('bulletin');
+
+
+
 
     Route::get('/postTemplate', function () {
         return view('pages.postTemplate');
@@ -88,9 +95,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('pages.replyTemplate');
     })->name('replyTemplate');
 
-    Route::get('/priceList', function () {
-        return view('pages.priceList');
-    })->name('priceList');
+
 
     Route::get('/replyTemplate', function () {
         return view('pages.replyTemplate');

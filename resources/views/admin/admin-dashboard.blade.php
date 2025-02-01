@@ -15,7 +15,7 @@
     {{-- Style Css --}}
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
     {{-- Bootstrap CDN --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -35,7 +35,7 @@
                 <p>Systematic Buddy 2.0</p>
             </div>
 
-            <a href="{{ route('bulletin')}}"
+            <a href="{{ route('admin-bulletin.index')}}"
             class="{{ Request::routeIs('bulletin') ? 'active' : '' }}">
                 <div class="side-bar input-group mb-0 mt-5 d-flex align-items-center justify-content-center border rounded">
                     <i class="fa-solid fa-list-ul me-2 icon" style="font-size: 14px;"></i>
@@ -59,7 +59,7 @@
                 </div>
             </a>
             <hr>
-            <a href="{{route('priceList')}}"
+            <a href="{{route('admin-priceList.index')}}"
             class="{{ Request::routeIs('priceList') ? 'active' : '' }}">
                 <div class="side-bar input-group mt-3 d-flex align-items-center justify-content-center border rounded">
                     <i class="fa-solid fa-money-check-dollar me-2 icon" style="font-size: 14px;"></i>
@@ -206,9 +206,35 @@
     
    
     {{-- Script JS --}}
-    <script src="{{ asset('js/bulletin.js') }}"></script>
+    {{-- @stack('scripts'); --}}
+
+        
 
     {{-- Bootstrap CDN --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+    $(document).ready(function() {
+    $('li[data-type="bulletin"], li[data-type="template"]').on('click', function() {
+        var id = $(this).data('id'); // Get the clicked item's ID
+
+        var url = "/admin-priceList/" + id; // Use correct RESTful URL
+
+        $.ajax({
+            url: url,
+            method: 'GET',
+            dataType: 'json', // Ensure JSON response is expected
+            success: function(response) {
+                $('#contentDisplay').html(response.content); // Display the content
+            },
+            error: function(xhr, status, error) {
+                console.error("AJAX Error:", status, error);
+                $('#contentDisplay').html('<p>Error loading content. Please try again.</p>');
+            }
+        });
+    });
+});
+
+</script>
 </body>
 </html>
