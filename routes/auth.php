@@ -111,4 +111,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/guides', function () {
         return view('pages.guides');
     })->name('guides');
+    
+    Route::get('/accounts', function () {
+        return view('pages.accounts');
+    })->name('accounts');
 });

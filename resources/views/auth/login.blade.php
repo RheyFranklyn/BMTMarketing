@@ -95,7 +95,7 @@
                     @csrf
                     <div class="mb-4 w-100">
                         <h1 class="fw-bold text-primary">Welcome!</h1>
-                        <p class="small">Explore top-quality Vendo Computers for all your needs.</p>
+                        <small class="text-muted" style="font-size:0.6rem;">Explore top-quality Vendo Computers for all your needs.</small>
                     </div>
                     <div class="col w-100 mb-2">
                         <label for="email" :value="__('Email')" class="mb-2">Email</label>

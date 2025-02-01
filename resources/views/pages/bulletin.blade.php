@@ -31,9 +31,6 @@
             <div style="border-left: 1px solid white; height: 1.2rem; margin-right: 8px;"></div>
             <span style="font-size:0.9rem; color:white; font-weight:bold;">Bulletin</span>
         </div>
-        <div class="buttonCopy d-flex align-items-center justify-content-center">
-            <button type="button" class="rounded" style="padding:0 10px; outline:none; border:none; font-size:0.rem;">Copy</button>
-        </div>
     </div>
 
         {{-- Content --}}

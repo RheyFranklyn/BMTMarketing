@@ -6,6 +6,8 @@
 }
 body {
     height: 100vh;
+
+    background-color: red;
 }
 /* for responsive layout */
 .home-div {
@@ -106,4 +108,30 @@ body {
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background: #555;
+}
+
+.table {
+    font-size: 0.8rem;
+}
+
+/* Add Accounts Style */
+#addAccountModal .modal-header {
+    background-color: white;
+}
+#addAccountModal,
+#addAccountModalLabel {
+    font-size: 0.8rem;
+}
+#addAccountModal input {
+    height: 30px;
+    padding: 17px;
+    font-size: 0.8rem;
+}
+.modal-footer button {
+    height: 30px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+}
+#addAccountModal #role {
+    font-size: 0.8rem;
 }
