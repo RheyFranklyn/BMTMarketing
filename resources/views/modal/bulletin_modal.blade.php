@@ -10,16 +10,29 @@
                     style="font-size:0.6rem;"></button>
             </div>
             <div class="modal-body">
-                <form>
+                <form id="bulletinForm">
+                    @csrf
+                    <div class="d-flex justify-content-end ">
+                        <div class="form-floating">
+                            <select class="form-select form-select-sm" id="selectBulletinorTemplate"
+                                name="selectBulletinorTemplate" style="font-size: 0.85rem; width: 16rem;">
+                                <option value="">Select Option</option>
+                                <option value="Bulletin">Bulletin</option>
+                                <option value="Template">Template</option>
+                            </select>
+                            <label for="selectBulletinorTemplate" style="font-size: 0.85rem;">Select Bulletin or
+                                Template</label>
+                        </div>
+                    </div>
                     <div class="mb-3">
                         <label for="itemName" class="form-label" style="font-size:0.7rem;">Item
                             Name</label>
-                        <input type="text" class="form-control" id="itemName" placeholder="Enter item name"
-                            style="height:30px;">
+                        <input type="text" class="form-control" id="itemName" name="itemName"
+                            placeholder="Enter item name" style="height:30px;">
                     </div>
                     <div class="mb-3">
                         <label for="itemDescription" class="form-label" style="font-size:0.7rem;">Description</label>
-                        <textarea class="form-control" id="itemDescription" rows="3"
+                        <textarea class="form-control" id="itemDescription" name="itemDescription" rows="3"
                             placeholder="Enter description"></textarea>
                     </div>
                 </form>

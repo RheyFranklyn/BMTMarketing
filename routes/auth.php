@@ -11,6 +11,7 @@ use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\BulletinController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
@@ -80,6 +81,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('pages.bulletin');
     })->name('bulletin');
 
+
+    Route::post('/bulletin/store', [BulletinController::class, 'store'])->name('bulletin.store');
+
     Route::get('/postTemplate', function () {
         return view('pages.postTemplate');
     })->name('postTemplate');
@@ -111,7 +115,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/guides', function () {
         return view('pages.guides');
     })->name('guides');
-    
+
     Route::get('/accounts', function () {
         return view('pages.accounts');
     })->name('accounts');

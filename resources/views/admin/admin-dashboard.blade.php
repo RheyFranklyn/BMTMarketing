@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>@yield('title')</title>
         <link rel="icon" href="{{asset('pictures/Bizmatech-logo-removebg-preview.png')}}">
         {{-- Google Font --}}
@@ -28,6 +29,9 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
             integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        {{-- Jquery CDN --}}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
         @yield('head')
     </head>
@@ -113,7 +117,7 @@
                         <span class="navbar-text" style="font-size: 12px;">Guides</span>
                     </div>
                 </a>
-                
+
 
             </div>
 
@@ -207,25 +211,29 @@
                     @include('modal.price_modal')
 
                     {{-- Dropdown --}}
-                    <div class="dropdown h-100 d-flex align-items-start justify-content-between" style="width: 200px; margin-right:10px;">
+                    <div class="dropdown h-100 d-flex align-items-start justify-content-between"
+                        style="width: 200px; margin-right:10px;">
                         {{-- Button Dropdown --}}
 
                         <div class="dropdown h-100 w-100 d-flex align-items-center justify-content-end">
                             <button type="button" class="h-100 d-flex justify-content-between align-items-center"
-                                data-bs-toggle="dropdown" aria-expanded="false" style="all:unset; cursor:pointer; width:150px;">
-                                
-                                <div class="h-100 d-flex align-items-end justify-content-between flex-column" style="width:150px;">
+                                data-bs-toggle="dropdown" aria-expanded="false"
+                                style="all:unset; cursor:pointer; width:150px;">
+
+                                <div class="h-100 d-flex align-items-end justify-content-between flex-column"
+                                    style="width:150px;">
                                     <span style="font-size:0.7rem;">Jhoedhen</span>
                                     <small class="text-muted align-self-end" style="font-size:0.6rem;">Admin</small>
                                 </div>
-                        
+
                                 <div class="h-100 w-25 d-flex align-items-center justify-content-center">
                                     <i class="fa-solid fa-sort-down" style="font-size:0.8rem;"></i>
                                 </div>
                             </button>
-                        
+
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" :href="route('profile.edit')" style="font-size:0.8rem;">{{ __('Profile') }}</a></li>
+                                <li><a class="dropdown-item" :href="route('profile.edit')" style="font-size:0.8rem;">{{
+                                        __('Profile') }}</a></li>
                                 <li><a class="dropdown-item" href="#" style="font-size:0.8rem;">Settings</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
@@ -234,8 +242,8 @@
                                     <form method="POST" action="{{ route('logout') }}" class="dropdown-item"
                                         style="font-size:0.8rem;text-align:center;">
                                         @csrf
-                                        <x-dropdown-link :href="route('logout')" style="text-decoration: none;color: red;"
-                                            onclick="event.preventDefault();
+                                        <x-dropdown-link :href="route('logout')"
+                                            style="text-decoration: none;color: red;" onclick="event.preventDefault();
                                                     this.closest('form').submit();">
                                             {{ __('Log Out') }}
                                         </x-dropdown-link>
@@ -243,17 +251,17 @@
                                 </li>
                             </ul>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
 
-        {{-- Main Content --}}
-        <div class="content p-1 ">
-            <div class="main-content h-100 w-100 border rounded shadow p-2" style="background-color: #ffff;">
-                @yield('content')
+            {{-- Main Content --}}
+            <div class="content p-1 ">
+                <div class="main-content h-100 w-100 border rounded shadow p-2" style="background-color: #ffff;">
+                    @yield('content')
+                </div>
             </div>
-        </div>
 
 
         </div>
