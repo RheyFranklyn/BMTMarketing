@@ -6,8 +6,9 @@
 }
 body {
     height: 100vh;
-}
 
+    background-color: red;
+}
 /* for responsive layout */
 .home-div {
     display: grid;
@@ -17,6 +18,8 @@ body {
         "sidebar header"
         "sidebar content";
     background-color: #f5f7ff;
+    height: 100vh;
+    /* change */
 }
 
 .sidebar {
@@ -43,7 +46,6 @@ body {
 
 .content {
     grid-area: content;
-    z-index: 1;
     padding: 15px;
 }
 
@@ -106,4 +108,30 @@ body {
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background: #555;
+}
+
+.table {
+    font-size: 0.8rem;
+}
+
+/* Add Accounts Style */
+#addAccountModal .modal-header {
+    background-color: white;
+}
+#addAccountModal,
+#addAccountModalLabel {
+    font-size: 0.8rem;
+}
+#addAccountModal input {
+    height: 30px;
+    padding: 17px;
+    font-size: 0.8rem;
+}
+.modal-footer button {
+    height: 30px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+}
+#addAccountModal #role {
+    font-size: 0.8rem;
 }

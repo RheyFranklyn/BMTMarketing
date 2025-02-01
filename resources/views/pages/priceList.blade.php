@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="h-100 w-100 d-flex justify-content-between">
-    <div  style="height:500px; width:300px;">
+    <div class="h-100" style="width:300px;">
         {{-- Bulletin List --}}
        <div class="card w-100 h-50 mb-1">
           <small class="card-header text-muted" style="font-size:0.7rem;">Bulletin</small>
